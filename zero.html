@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body id="zer">
+    <main>
+        <div class="text">
+            <div class="brand">
+                <div class="logo">
+                    <img src="./img/nike.svg" alt="">
+                </div>
+                <ul>
+                    <li>
+                        <a href="./index.html">LeBron 19</a>
+                    </li>
+                    <li>
+                        <a href="./global-game.html">Global Game</a>
+                    </li>
+                    <li>
+                        <a href="./zero.html"> Zer0.4</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-p">
+                <h1><em>Ya puedes comprar las</em><span>nuevas Zer0.4</span></h1>
+                <p>Aprovecha que estamos en descuento y date la oportunidad de comprar estas zapatillas bien diseñadas y sobre todo comedas</p>
+                <a class="btn" href="#video">Ver producto</a>
+            </div>
+            <div></div>
+        </div>
+        <div class="img"></div>
+    </main>
+    <section class="row-1">
+        <h2>¿No estas <strong>convencido aún?</strong></h2>
+        <div id="video" class="video">
+            <div class="poster-video">
+                <img src="./img/btn-play.svg" alt="">
+            </div>
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/drAaI0hoFjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        </div>
+        <div class="text">
+            <h2>Protección contra impactos</h2>
+            <p>El sistema de amortiguación rediseñado combina una amortiguación Max Air visible con una unidad Zoom Air gruesa y reactiva bajo el antepié. La amortiguación Max Air contribuye a disipar la fuerza de los impactos, mientras que la unidad Zoom Air te ayuda a impulsarte por la cancha. La parte inferior de las zapatillas se ha diseñado a imitación de las válvulas y los tubos que componen sus mecanismos internos.
+            </p>
+        </div>
+        <div class="gallery">
+            <div class="container">
+                <div class="img img-big"></div>
+                <div class="img img-short-1"></div>
+                <div class="img img-short-2"></div>
+            </div>
+        </div>
+    </section>
+    <div class="cta">
+        <h3>Ahora que ya estas seguro <span>¿en que taya los quieres ?</span></h3>
+        <ul class="list">
+            <li class="active">E36</li>
+            <li class="disable">E36.5</li>
+            <li class="disable">E37.5</li>
+            <li class="disable">E38</li>
+        </ul>
+        <h4 class="price">$400.000</h4>
+        <a class="btn" href="">Agregar al carrito</a>
+    </div>
+    <section class="related">
+        <h3 class="title">Productos relacionados</h3>
+        <ul class="list">
+            <li>
+                <a href="./global-game.html">
+                    <img src="./img/zapatilla-1.png" alt="">
+                    <h3>Air Jordan XXXVI SE Kia "Global Game" </h3>
+                    <h4>$400.000</h4>
+                    <span class="btn btn-black" href="">Ver producto</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="./index.html">
+                    <img src="./img/zapatilla-2.png" alt="">
+                    <h3>LeBron 19 </h3>
+                    <h4>$400.000</h4>
+                    <a class="btn btn-black" href="">Ver producto</a>
+                </a>
+            </li>
+            <li>
+                <a href="./zero.html">
+                    <img src="./img/zapatilla-3.png" alt="">
+                    <h3>Air Jordan XXXVI SE "Glory" </h3>
+                    <h4>$400.000</h4>
+                    <a class="btn btn-black" href="">Ver producto</a>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <script>
+        $(function () {
+            var videos = $(".video");
+
+            videos.on("click", function () {
+                var elm = $(this),
+                    conts = elm.contents(),
+                    le = conts.length,
+                    ifr = null;
+
+                for (var i = 0; i < le; i++) {
+                    if (conts[i].nodeType == 8) ifr = conts[i].textContent;
+                }
+                elm.addClass("player").html(ifr);
+                elm.off("click");
+            });
+        });
+    </script>
+</body>
+
+</html>

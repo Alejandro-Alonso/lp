@@ -1,0 +1,486 @@
+@import './reset';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+@mixin tablet {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+
+@mixin laptop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+:root {
+    --primary: #181511;
+    --secondary: #EEC565;
+}
+
+.font {
+    font-family: 'Poppins', sans-serif;
+
+    &-r {
+        font-weight: 400;
+    }
+
+    &-sb {
+        font-weight: 600;
+    }
+
+    &-eb {
+        font-weight: 800;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background: var(--primary);
+    @extend .font;
+    color: #fff;
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.wrap {
+    padding: 0 4%;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid
+}
+
+.btn {
+    color: var(--secondary);
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary);
+    transition: 300ms all ease-in-out;
+
+    &:hover {
+        background-color: var(--secondary);
+        color: var(--primary)
+    }
+}
+
+
+main {
+    @extend .grid;
+
+    @include tablet() {
+        grid-template-columns: repeat(2, 1fr);
+        height: 90vh;
+    }
+
+    .text {
+        @extend .flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .brand {
+            @extend .flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 6%;
+
+            ul {
+                @extend .flex;
+                gap: 2rem;
+
+                a {
+                    color: #F2F2F2;
+
+                    &:hover {
+                        color: var(--secondary);
+                    }
+                }
+            }
+        }
+
+        .text-p {
+            h1 {
+                font-size: 3rem;
+                line-height: 1.2;
+
+                em {
+                    padding: 6%;
+                }
+
+                span {
+                    display: block;
+                    @extend .font-sb;
+                    background: var(--secondary);
+                    color: var(--primary);
+                    padding: 1rem 4%;
+
+                }
+            }
+
+            p {
+                padding: 4%;
+            }
+
+            .btn {
+                margin-left: 4%;
+            }
+        }
+
+    }
+
+    .img {
+        background: url(../img/img-1.jpg)center/cover;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        order: -1;
+        display: none;
+
+        @include tablet() {
+            order: initial;
+            display: block;
+        }
+    }
+}
+
+.row-1 {
+    @extend .wrap;
+    margin-top: 4rem;
+
+    h2 {
+        text-align: center;
+        font-size: 1.6rem;
+        margin-top: 2rem;
+
+        strong {
+            display: block;
+            @extend .font-sb;
+            font-size: 2rem;
+        }
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        height: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        margin-top: 2rem;
+
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 2rem;
+        }
+    }
+
+    .video {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        height: 0;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .poster-video {
+            background: url(../img/lebron.jpg)center/cover;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            @extend .grid;
+            place-content: center;
+            border-radius: 2rem;
+            overflow: hidden;
+            margin-top: 2rem;
+
+            img {
+                transition: 300ms transform ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+    }
+
+    /* image poster clicked, player class added using js */
+    .video.player img {
+        display: none;
+    }
+
+    .video.player:after {
+        display: none;
+    }
+
+    .text {
+        margin-top: 5rem;
+
+        h2 {
+            font-size: 2.2rem;
+            @extend .font-sb;
+            font-style: italic;
+        }
+
+        p {
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 1rem;
+            opacity: .7;
+        }
+    }
+
+    .gallery {
+        height: 100vh;
+        margin: 4rem;
+
+        .container {
+            display: grid;
+            height: 100%;
+            gap: 2rem;
+            margin-top: 2rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "img-big img-short-1"
+                "img-big img-short-2";
+
+        }
+
+        .img {
+            background-size: cover;
+            background-position: center;
+            border-radius: 1rem;
+        }
+
+        .img-big {
+            grid-area: img-big;
+            background-image: url(../img/zapatilla-1.jpg);
+        }
+
+        .img-short-1 {
+            grid-area: img-short-1;
+            background-image: url(../img/zapatilla-2.jpg);
+
+        }
+
+        .img-short-2 {
+            grid-area: img-short-2;
+            background-image: url(../img/zapatilla-3.jpg);
+
+        }
+
+    }
+
+
+
+}
+
+.cta {
+    @extend .wrap;
+    text-align: center;
+
+    h3 {
+        font-size: 1.4rem;
+        font-style: italic;
+        line-height: 1.4;
+
+        span {
+            display: block;
+            @extend .font-sb;
+            font-size: 1.8rem;
+        }
+    }
+
+    .list {
+        @extend .flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 2rem;
+
+        li {
+            @extend .font-sb;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .active {
+            background: #EEC565;
+            color: #181511;
+        }
+
+        .disable {
+            border: 1px solid #707070;
+            transition: 300ms all ease-in-out;
+
+            &:hover {
+                background: var(--secondary);
+                color: var(--primary);
+            }
+        }
+    }
+
+    .price {
+        font-size: 2.5rem;
+        @extend .font-sb;
+        margin-top: 2rem;
+        font-style: italic;
+    }
+
+    .btn {
+        margin-top: 2rem;
+    }
+}
+
+.related {
+    background: #F8FFFF;
+    border-radius: 4rem;
+    margin-top: 5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .title {
+        font-size: 2rem;
+        color: #181511;
+        text-align: center;
+        font-style: italic;
+        padding-top: 3rem;
+        @extend .font-sb;
+    }
+
+    .list {
+        @extend .grid;
+        @extend .wrap;
+        padding: 8rem 4rem 4rem;
+        gap: 2rem;
+
+        @include tablet() {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        li {
+            background: #fff;
+            box-shadow: 0 0 1rem rgba(161, 161, 161, 0.2);
+            position: relative;
+            border-radius: 1rem;
+            padding-bottom: 2rem;
+            text-align: center;
+            transition: 300ms all ease-in-out;
+
+            &:hover {
+                transform: translateY(1rem);
+            }
+
+            img {
+                width: 16rem;
+                margin-top: -6rem;
+            }
+
+            h3 {
+                color: #181511;
+                text-align: center;
+                font-size: 1.2rem;
+                padding: 0 4rem;
+            }
+
+            h4 {
+                font-size: 2rem;
+                color: #181511;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .btn-black {
+                background: #181511;
+                border: none;
+
+                &:hover {
+                    background: var(--secondary);
+                }
+            }
+        }
+    }
+
+}
+
+#global {
+    main {
+        .img {
+            background-image: url(../img/global-game-main.jpg);
+        }
+    }
+
+    .poster-video {
+        background-image: url(../img/global-game-poster.jpg);
+    }
+
+    .img-big {
+        background-image: url(../img/glabal-game-1.jpg);
+    }
+
+    .img-short-1 {
+        background-image: url(../img/global-game-2.jpg);
+    }
+
+    .img-short-2 {
+        background-image: url(../img/global-game-3.jpg);
+    }
+}
+
+#zer {
+    main {
+        .img {
+            background-image: url(../img/main-zer.jpg);
+        }
+    }
+
+    .poster-video {
+        background-image: url(../img/poster-zer.jpg);
+    }
+
+    .img-big {
+        background-image: url(../img/gallery-zer1.jpg);
+    }
+
+    .img-short-1 {
+        background-image: url(../img/gallery-zer2.jpg);
+    }
+
+    .img-short-2 {
+        background-image: url(../img/gallery-zer3.jpg);
+    }
+}

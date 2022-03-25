@@ -1,0 +1,604 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --primary: #181511;
+  --secondary: #EEC565;
+}
+
+.font, body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-r {
+  font-weight: 400;
+}
+
+.font-sb, main .text .text-p h1 span, .row-1 h2 strong, .row-1 .text h2, .cta h3 span, .cta .list li, .cta .price, .related .title {
+  font-weight: 600;
+}
+
+.font-eb {
+  font-weight: 800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--primary);
+  color: #fff;
+}
+
+body p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+body a {
+  text-decoration: none;
+}
+
+.wrap, .row-1, .cta, .related .list {
+  padding: 0 4%;
+}
+
+.flex, main .text, main .text .brand, main .text .brand ul, .cta .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid, main, .row-1 .video .poster-video, .related .list {
+  display: -ms-grid;
+  display: grid;
+}
+
+.btn {
+  color: var(--secondary);
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 2rem;
+  border: 1px solid var(--secondary);
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+@media (min-width: 900px) {
+  main {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    height: 90vh;
+  }
+}
+
+main .text {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .text .brand {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  padding: 6%;
+}
+
+main .text .brand ul {
+  gap: 2rem;
+}
+
+main .text .brand ul a {
+  color: #F2F2F2;
+}
+
+main .text .brand ul a:hover {
+  color: var(--secondary);
+}
+
+main .text .text-p h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+main .text .text-p h1 em {
+  padding: 6%;
+}
+
+main .text .text-p h1 span {
+  display: block;
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 1rem 4%;
+}
+
+main .text .text-p p {
+  padding: 4%;
+}
+
+main .text .text-p .btn {
+  margin-left: 4%;
+}
+
+main .img {
+  background: url(../img/img-1.jpg) center/cover;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  main .img {
+    -webkit-box-ordinal-group: initial;
+        -ms-flex-order: initial;
+            order: initial;
+    display: block;
+  }
+}
+
+.row-1 {
+  margin-top: 4rem;
+  /* image poster clicked, player class added using js */
+}
+
+.row-1 h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.row-1 h2 strong {
+  display: block;
+  font-size: 2rem;
+}
+
+.row-1 .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.row-1 .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.row-1 .video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+
+.row-1 .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.row-1 .video .poster-video {
+  background: url(../img/lebron.jpg) center/cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  place-content: center;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.row-1 .video .poster-video img {
+  -webkit-transition: 300ms -webkit-transform ease-in-out;
+  transition: 300ms -webkit-transform ease-in-out;
+  transition: 300ms transform ease-in-out;
+  transition: 300ms transform ease-in-out, 300ms -webkit-transform ease-in-out;
+  cursor: pointer;
+}
+
+.row-1 .video .poster-video img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.row-1 .video.player img {
+  display: none;
+}
+
+.row-1 .video.player:after {
+  display: none;
+}
+
+.row-1 .text {
+  margin-top: 5rem;
+}
+
+.row-1 .text h2 {
+  font-size: 2.2rem;
+  font-style: italic;
+}
+
+.row-1 .text p {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: .7;
+}
+
+.row-1 .gallery {
+  height: 100vh;
+  margin: 4rem;
+}
+
+.row-1 .gallery .container {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-auto-flow: row;
+      grid-template-areas: "img-big img-short-1" "img-big img-short-2";
+}
+
+.row-1 .gallery .img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+}
+
+.row-1 .gallery .img-big {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: img-big;
+  background-image: url(../img/zapatilla-1.jpg);
+}
+
+.row-1 .gallery .img-short-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: img-short-1;
+  background-image: url(../img/zapatilla-2.jpg);
+}
+
+.row-1 .gallery .img-short-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: img-short-2;
+  background-image: url(../img/zapatilla-3.jpg);
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.cta h3 span {
+  display: block;
+  font-size: 1.8rem;
+}
+
+.cta .list {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+.cta .list li {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.cta .list .active {
+  background: #EEC565;
+  color: #181511;
+}
+
+.cta .list .disable {
+  border: 1px solid #707070;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
+}
+
+.cta .list .disable:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.cta .price {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.cta .btn {
+  margin-top: 2rem;
+}
+
+.related {
+  background: #F8FFFF;
+  border-radius: 4rem;
+  margin-top: 5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.related .title {
+  font-size: 2rem;
+  color: #181511;
+  text-align: center;
+  font-style: italic;
+  padding-top: 3rem;
+}
+
+.related .list {
+  padding: 8rem 4rem 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .related .list {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.related .list li {
+  background: #fff;
+  -webkit-box-shadow: 0 0 1rem rgba(161, 161, 161, 0.2);
+          box-shadow: 0 0 1rem rgba(161, 161, 161, 0.2);
+  position: relative;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
+}
+
+.related .list li:hover {
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+}
+
+.related .list li img {
+  width: 16rem;
+  margin-top: -6rem;
+}
+
+.related .list li h3 {
+  color: #181511;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 4rem;
+}
+
+.related .list li h4 {
+  font-size: 2rem;
+  color: #181511;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.related .list li .btn-black {
+  background: #181511;
+  border: none;
+}
+
+.related .list li .btn-black:hover {
+  background: var(--secondary);
+}
+
+#global main .img {
+  background-image: url(../img/global-game-main.jpg);
+}
+
+#global .poster-video {
+  background-image: url(../img/global-game-poster.jpg);
+}
+
+#global .img-big {
+  background-image: url(../img/glabal-game-1.jpg);
+}
+
+#global .img-short-1 {
+  background-image: url(../img/global-game-2.jpg);
+}
+
+#global .img-short-2 {
+  background-image: url(../img/global-game-3.jpg);
+}
+
+#zer main .img {
+  background-image: url(../img/main-zer.jpg);
+}
+
+#zer .poster-video {
+  background-image: url(../img/poster-zer.jpg);
+}
+
+#zer .img-big {
+  background-image: url(../img/gallery-zer1.jpg);
+}
+
+#zer .img-short-1 {
+  background-image: url(../img/gallery-zer2.jpg);
+}
+
+#zer .img-short-2 {
+  background-image: url(../img/gallery-zer3.jpg);
+}
+/*# sourceMappingURL=style.css.map */
